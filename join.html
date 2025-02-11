@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Our Military Store</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <style>
+        body {
+            background-color: #2F4F4F;
+            color: #F5F5DC;
+            font-family: Arial, sans-serif;
+        }
+        h2 {
+            text-align: center;
+        }
+        form {
+            width: 50%;
+            margin: auto;
+            background-color: #556B2F;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        label, select, input {
+            display: block;
+            margin: 10px 0;
+            width: 100%;
+        }
+        button {
+            background-color: #8B4513;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #A52A2A;
+        }
+    </style>
+    <script>
+        $(document).ready(function() {
+            $("#registration-form").on("submit", function(e) {
+                e.preventDefault();
+                let valid = true;
+                let fullName = $("#full-name").val().trim();
+                let regNumber = $("#registration-number").val().trim();
+                let email = $("#email").val().trim();
+                let password = $("#password").val();
+                let confirmPassword = $("#confirm-password").val();
+                let regExp = /^BCS-\d{2}-\d{4}-\d{4}$/;
+                let emailExp = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                
+                if (fullName.length < 3) {
+                    alert("Full name must be at least 3 characters long.");
+                    valid = false;
+                }
+                if (!regExp.test(regNumber)) {
+                    alert("Registration Number must be in format BCS-00-0000-0000.");
+                    valid = false;
+                }
+                if (!emailExp.test(email)) {
+                    alert("Invalid email format.");
+                    valid = false;
+                }
+                if (password.length < 8 || !/[!@#$%^&*]/.test(password)) {
+                    alert("Password must be at least 8 characters long and contain a special character.");
+                    valid = false;
+                }
+                if (password !== confirmPassword) {
+                    alert("Passwords do not match.");
+                    valid = false;
+                }
+                if (valid) {
+                    alert("Registration Successful!");
+                    this.submit();
+                }
+            });
+
+            var regions = {
+          
+          "Arusha": ["Arusha City", "Meru", "Monduli", "Arusha", "Karatu", "Longido", "Ngorongoro"],
+          "Dar es Salaam": ["Ilala", "Kinondoni", "Temeke", "Kigamboni", "Ubungo"],
+          "Dodoma": ["Dodoma City", "Bahi", "Chamwino", "Chemba", "Kondoa", "Kongwa", "Mpwapwa"],
+          "Geita": ["Geita", "Bukombe", "Chato", "Mbogwe", "Nyang'hwale"],
+          "Iringa": ["Iringa Urban", "Iringa Rural", "Kilolo", "Mafinga", "Mufindi"],
+          "Kagera": ["Bukoba Urban", "Bukoba Rural", "Karagwe", "Kyerwa", "Missenyi", "Muleba", "Ngara"],
+          "Katavi": ["Mpanda Urban", "Mpanda Rural", "Mlele"],
+          "Kigoma": ["Kigoma Urban", "Kigoma Rural", "Kasulu", "Kibondo", "Uvinza"],
+          "Kilimanjaro": ["Moshi Urban", "Moshi Rural", "Hai", "Rombo", "Mwanga", "Siha", "Same"],
+          "Lindi": ["Lindi Urban", "Lindi Rural", "Kilwa", "Liwale", "Nachingwea", "Ruangwa"],
+          "Manyara": ["Babati", "Hanang", "Kiteto", "Mbulu", "Simanjiro"],
+          "Mara": ["Musoma Urban", "Musoma Rural", "Bunda", "Butiama", "Rorya", "Serengeti", "Tarime"],
+          "Mbeya": ["Mbeya City", "Mbeya Rural", "Chunya", "Ileje", "Mbarali", "Rungwe", "Kyela"],
+          "Morogoro": ["Morogoro Urban", "Morogoro Rural", "Gairo", "Kilombero", "Kilosa", "Mvomero", "Ulanga"],
+          "Mtwara": ["Mtwara Urban", "Mtwara Rural", "Masasi", "Nanyumbu", "Newala", "Tandahimba"],
+          "Mwanza": ["Ilemela", "Nyamagana", "Buchosa", "Magu", "Misungwi", "Sengerema", "Ukerewe"],
+          "Njombe": ["Njombe Urban", "Njombe Rural", "Ludewa", "Makambako", "Wanging'ombe"],
+          "Pemba North": ["Wete", "Micheweni"],
+          "Pemba South": ["Chake Chake", "Mkoani"],
+          "Pwani": ["Kibaha Urban", "Kibaha Rural", "Bagamoyo", "Kisarawe", "Mafia", "Rufiji", "Mkuranga"],
+          "Rukwa": ["Sumbawanga Urban", "Sumbawanga Rural", "Kalambo", "Nkasi"],
+          "Ruvuma": ["Songea Urban", "Songea Rural", "Mbinga", "Namtumbo", "Nyasa", "Tunduru"],
+          "Shinyanga": ["Shinyanga Urban", "Shinyanga Rural", "Kahama", "Kishapu", "Ushetu"],
+          "Simiyu": ["Bariadi", "Busega", "Itilima", "Maswa", "Meatu"],
+          "Singida": ["Singida Urban", "Singida Rural", "Ikungi", "Manyoni", "Mkalama"],
+          "Songwe": ["Mbozi", "Ileje", "Momba", "Songwe"],
+          "Tabora": ["Tabora Urban", "Tabora Rural", "Igunga", "Kaliua", "Nzega", "Sikonge", "Urambo"],
+          "Tanga": ["Tanga City", "Tanga Rural", "Handeni", "Kilindi", "Korogwe", "Lushoto", "Mkinga", "Muheza", "Pangani"],
+          "Zanzibar North": ["Kaskazini 'A'", "Kaskazini 'B'"],
+          "Zanzibar South": ["Kusini", "Kati"],
+          "Zanzibar West": ["Magharibi", "Mjini"]
+      
+              };
+              
+              for (var region in regions) {
+                  $('#region').append('<option value="' + region + '">' + region + '</option>');
+              }
+              
+              $('#region').change(function() {
+                  var selectedRegion = $(this).val();
+                  var districts = regions[selectedRegion] || [];
+                  $('#district').html('<option value="">Select District</option>');
+                  $.each(districts, function(index, district) {
+                      $('#district').append('<option value="' + district + '">' + district + '</option>');
+                  });
+              });
+          });
+    </script>
+</head>
+<body>
+    <h2>Join Our Military Store</h2>
+    <form id="registration-form">
+        <label>Full Name:</label>
+        <input type="text" id="full-name" required><br>
+
+        <label>Registration Number:</label>
+        <input type="text" id="registration-number" placeholder="BCS-00-0000-0000" required><br>
+
+        <label>Sex:</label>
+        <select id="sex">
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+        </select><br>
+
+        <label>Email:</label>
+        <input type="email" id="email" required><br>
+
+        <label>Region:</label>
+        <select id="region">
+            <option value="">Select Region</option>
+            <option value="Region1">Region1</option>
+            <option value="Region2">Region2</option>
+        </select><br>
+
+        <label>District:</label>
+        <select id="district">
+            <option value="">Select District</option>
+        </select><br>
+
+        <label>Password:</label>
+        <input type="password" id="password" required><br>
+
+        <label>Confirm Password:</label>
+        <input type="password" id="confirm-password" required><br>
+
+        <button type="submit">Register</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Military Store</title>
+  <link rel="stylesheet" href="sen.css">
+  <style>
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #2f4f4f; 
+  color: #dcdcdc; 
+  line-height: 1.6;
+  padding: 20px;
+}
+
+
+.header {
+  text-align: center;
+  background-color: #556b2f; 
+  color: #f0e68c; 
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.subheading {
+  text-align: center;
+  margin: 20px 0;
+  color: #8b4513; 
+}
+
+
+.images-section {
+  margin: 20px 0;
+}
+
+.image {
+  width: 200px;
+  height: auto;
+  margin: 10px;
+  display: block;
+  border: 2px solid #8b0000;
+  border-radius: 5px;
+}
+
+.image.left {
+  float: left;
+}
+
+.image.center {
+  display: block;
+  margin: 0 auto;
+}
+
+.image.right {
+  float: right;
+}
+
+.image.linked {
+  display: block;
+  margin: 20px auto;
+  border: 3px solid #228b22; 
+}
+
+
+.images-section::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+
+.font-section h3 {
+  margin-top: 20px;
+  color: #32cd32; 
+}
+
+
+.preformatted-section {
+  margin: 20px 0;
+  background-color: #696969; 
+  padding: 15px;
+  border-radius: 8px;
+  font-family: monospace;
+  color: #ffffff; 
+}
+
+
+.links-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.links-section ul li {
+  margin: 5px 0;
+}
+
+.links-section ul li a {
+  color: #1e90ff; 
+  text-decoration: none;
+}
+
+.links-section ul li a:hover {
+  text-decoration: underline;
+  color: #ff4500; 
+}
+
+
+.lists-section {
+  margin: 20px 0;
+  color: #deb887; 
+}
+
+.lists-section h4 {
+  margin: 10px 0;
+  color: #4682b4; 
+}
+
+
+hr {
+  border: none;
+  border-top: 2px solid #808000; 
+  margin: 20px 0;
+}
+
+.footer {
+  background-color: #2f4f4f;
+  color: #f0e68c; 
+  padding: 20px;
+  margin-top: 30px;
+  border-top: 3px solid #556b2f;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-column {
+  flex: 1;
+  margin: 10px;
+  min-width: 200px;
+}
+
+.footer-column h4 {
+  margin-bottom: 10px;
+  color: #8b4513; 
+}
+
+.footer-column p, .footer-column ul {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin: 5px 0;
+}
+
+.footer-column ul li a {
+  color: #f0e68c; 
+  text-decoration: none;
+}
+
+.footer-column ul li a:hover {
+  color: #8b0000; 
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 12px;
+  color: #dcdcdc; 
+}
+
+.footer-bottom a {
+  color: #f0e68c;
+  text-decoration: none;
+}
+
+.footer-bottom a:hover {
+  color: #8b4513;
+}
+
+
+
+  </style>
+</head>
+<body>
+  
+  <header class="header">
+    <h1>Military Equipment Store</h1>
+
+    <nav class="navigation">
+      <ul class="nav-links">
+        <li><a href="all/join.html">JOIN US </a></li>
+        
+        
+      </ul>
+    </nav>
+
+  </header>
+
+
+  <h2 class="subheading">Your One-Stop Shop for Tactical Gear</h2>
+  
+  
+  <section class="images-section">
+    <h3>Explore Our Categories</h3>
+    <img src="images/we.jpg" alt="Weapons" class="image left">
+    <img src="images/veh.jpg" alt="Vehicles" class="image center">
+    <img src="images/air.jpg" alt="Aircraft" class="image right">
+    <a href="https://example.com" target="_blank">
+      <img src="images/gear.jpg" alt="Tactical Gear" class="image linked">
+    </a>
+  </section>
+
+
+  <section class="font-section">
+    <h3>Why Choose Us?</h3>
+    <p><b>Reliable</b> and trusted supplier of military-grade equipment.</p>
+    <p><i>Specialized</i> in delivering quality and precision.</p>
+    <p><u>Affordable</u> solutions for every mission need.</p>
+    <p style="font-family: 'Arial', sans-serif; color: #556b2f; font-size: 20px;">Military Green Font</p>
+    <p style="font-family: 'Courier New', monospace; color: #8b4513; font-size: 18px;">Earthy Tones Font</p>
+  </section>
+
+  
+  <section class="preformatted-section">
+    <h3>Key Features</h3>
+    <pre>
+  Our store offers:
+    - High-quality weapons
+    - Tactical gear for professionals
+    - Reliable vehicles for every terrain
+    - Certified military spare parts
+    </pre>
+  </section>
+
+  
+  <section class="links-section">
+    <h3>Quick Links</h3>
+    <ul>
+      <li><a href="all/product.html" target="_blank">Explore Military Weapons</a></li>
+      <li><a href="https://example.com" target="_blank">Shop Tactical Gear</a></li>
+      <li><a href="all/categ.html">View Our Categories</a></li>
+    </ul>
+  </section>
+
+  
+  <section class="lists-section" id="lists">
+    <h3>Our Categories</h3>
+    <h4>Weapons</h4>
+    <ol>
+      <li>Firearms</li>
+      <li>Ammunition</li>
+      <li>Heavy Artillery</li>
+    </ol>
+    
+    <h4>Vehicles</h4>
+    <ul>
+      <li>Armored Cars</li>
+      <li>Tanks</li>
+      <li>Transport Trucks</li>
+    </ul>
+
+    <h4>Accessories</h4>
+    <dl>
+      <dt>Uniforms</dt>
+      <dd>Comfortable and durable designs.</dd>
+      <dt>Spare Parts</dt>
+      <dd>Reliable and certified replacements.</dd>
+    </dl>
+  </section>
+
+  
+  <hr>
+  <p>Quality you can rely on!</p>
+  <hr>
+
+  
+<footer class="footer">
+    <div class="footer-content">
+      <div class="footer-column">
+        <h4>About Us</h4>
+        <p>Your trusted supplier of military-grade equipment, tactical gear, and accessories for professionals.</p>
+      </div>
+      <div class="footer-column">
+        <h4>Contact Us</h4>
+        <p>Email: contact@militarystore.com</p>
+        <p>Phone: +255 701234543</p>
+        <p>Address: 123 Tarime, Mara</p>
+      </div>
+      <div class="footer-column">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="all/categ.html">Categories</a></li>
+          <li><a href="all/product.html">Products</a></li>
+          <li><a href="all/contacus.html">Customer Support</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Military Equipment Store in Cooperations with SENZO'S Tech. All Rights Reserved. | <a href="#legal">Terms & Conditions</a></p>
+    </div>
+  </footer>
+  
+</body>
+</html>

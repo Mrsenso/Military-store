@@ -1,0 +1,187 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #2f4f4f; /* Dark Slate Gray for a military-style background */
+  color: #dcdcdc; /* Gainsboro for text */
+  line-height: 1.6;
+  padding: 20px;
+}
+
+/* Header Section */
+.header {
+  text-align: center;
+  background-color: #556b2f; /* Dark Olive Green for header background */
+  color: #f0e68c; /* Khaki for text */
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.subheading {
+  text-align: center;
+  margin: 20px 0;
+  color: #8b4513; /* Saddle Brown for subheading text */
+}
+
+/* Images Section */
+.images-section {
+  margin: 20px 0;
+}
+
+.image {
+  width: 200px;
+  height: auto;
+  margin: 10px;
+  display: block;
+  border: 2px solid #8b0000; /* Dark Red border to reflect a military edge */
+  border-radius: 5px;
+}
+
+.image.left {
+  float: left;
+}
+
+.image.center {
+  display: block;
+  margin: 0 auto;
+}
+
+.image.right {
+  float: right;
+}
+
+.image.linked {
+  display: block;
+  margin: 20px auto;
+  border: 3px solid #228b22; /* Forest Green for linked image */
+}
+
+/* Clearfix for floated images */
+.images-section::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* Font Section */
+.font-section h3 {
+  margin-top: 20px;
+  color: #32cd32; /* Lime Green for section heading */
+}
+
+/* Preformatted Text */
+.preformatted-section {
+  margin: 20px 0;
+  background-color: #696969; /* Dim Gray background */
+  padding: 15px;
+  border-radius: 8px;
+  font-family: monospace;
+  color: #ffffff; /* White for text */
+}
+
+/* Links Section */
+.links-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.links-section ul li {
+  margin: 5px 0;
+}
+
+.links-section ul li a {
+  color: #1e90ff; /* Dodger Blue for links */
+  text-decoration: none;
+}
+
+.links-section ul li a:hover {
+  text-decoration: underline;
+  color: #ff4500; /* Orange Red for hover effect */
+}
+
+/* Lists Section */
+.lists-section {
+  margin: 20px 0;
+  color: #deb887; /* BurlyWood for list text */
+}
+
+.lists-section h4 {
+  margin: 10px 0;
+  color: #4682b4; /* Steel Blue for list headings */
+}
+
+/* Horizontal Divider */
+hr {
+  border: none;
+  border-top: 2px solid #808000; /* Olive for horizontal dividers */
+  margin: 20px 0;
+}
+/* Footer Section */
+.footer {
+  background-color: #2f4f4f; /* Dark Slate Gray */
+  color: #f0e68c; /* Khaki */
+  padding: 20px;
+  margin-top: 30px;
+  border-top: 3px solid #556b2f; /* Dark Olive Green border */
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-column {
+  flex: 1;
+  margin: 10px;
+  min-width: 200px;
+}
+
+.footer-column h4 {
+  margin-bottom: 10px;
+  color: #8b4513; /* Saddle Brown */
+}
+
+.footer-column p, .footer-column ul {
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin: 5px 0;
+}
+
+.footer-column ul li a {
+  color: #f0e68c; /* Khaki */
+  text-decoration: none;
+}
+
+.footer-column ul li a:hover {
+  color: #8b0000; /* Dark Red */
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 12px;
+  color: #dcdcdc; /* Gainsboro */
+}
+
+.footer-bottom a {
+  color: #f0e68c;
+  text-decoration: none;
+}
+
+.footer-bottom a:hover {
+  color: #8b4513;
+}
